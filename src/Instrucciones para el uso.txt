@@ -1,0 +1,5 @@
+1 se crea pone algo y guarda
+2 se pone git add .
+3 git commit -m "-Comentario-"
+4 git push (Para mandar)
+5 git pull (Para obtener oi cargar) 
