@@ -4,3 +4,6 @@
 3 git commit -m "-Comentario-"
 4 git push (Para mandar)
 5 git pull (Para obtener oi cargar) 
+
+para ir a la copia es: git checkout 'copia'
+para regresar: git checkout main
