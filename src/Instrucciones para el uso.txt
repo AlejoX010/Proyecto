@@ -1,3 +1,4 @@
+0.5 git init en la carpeta que es 
 1 se crea pone algo y guarda
 2 se pone git add .
 3 git commit -m "-Comentario-"
