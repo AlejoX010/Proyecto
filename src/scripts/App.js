@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 
 
 // const App = () => {} eso tamb8ien es una funcion
