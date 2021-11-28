@@ -8,8 +8,9 @@ const Cita = ({ cita, eliminarCita }) => (
         <p>Prestatario: <span>{cita.prestatario}</span></p>
         <p>Prestamista: <span>{cita.prestamista}</span></p>
         <p>Cantidad: <span>${cita.cantidad}</span></p>
-        <p>Comicion: <span>{cita.interes}</span></p>
-        <p>Total: <span>{total + parseInt(cita.cantidad)}</span></p>
+        <p>Comicion: <span>{cita.interes}%</span></p>
+        <p>Ganancia: <span>${total}</span></p>
+        <p>Total: <span>${total + parseInt(cita.cantidad)}</span></p>
         <p>Fecha: <span>{cita.fecha}</span></p>
         <p>Hora: <span>{cita.hora}</span></p>
         <p>Descripcion: <span>{cita.descripcion}</span></p>
