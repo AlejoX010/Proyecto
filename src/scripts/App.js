@@ -2,12 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import Formulario from '../componentes/Formulario.js'
 import Cita from '../componentes/Cita.js';
 
-// const App = () => {} eso tambien es una funcion
-// Se pueden mandar a llamar variables pero apra eso debe de ser entre llaves
-
-//Mandando a llamar asi a la funcion y poniendole las props se pueden reutilizar el codigo para mandar mas diferentes mensajes con la misma funcion
-// Las Funciones siempre van en mayusculas
-
 function App() {
 
   //CItas en localstorage (Es para subirlo a la mini db que tiene chrome)

@@ -1,8 +1,5 @@
 import React, {Fragment} from 'react';
-// let total = '';
-// const Si = ({ cita, eliminarCita }) => (
-//  total = (parseInt(cita.interes)*parseInt(cita.cantidad))/100
-// )
+
 //Esto es para que muestre los objetos en un fichero aparte en el div 2 del app
 const Cita = ({ cita, eliminarCita }) => (
     <Fragment>
