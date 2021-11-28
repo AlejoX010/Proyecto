@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import Formulario from '../componentes/Formulario.js'
 import Cita from '../componentes/Cita.js';
 
-// const App = () => {} eso tamb8ien es una funcion
+// const App = () => {} eso tambien es una funcion
 // Se pueden mandar a llamar variables pero apra eso debe de ser entre llaves
 
 //Mandando a llamar asi a la funcion y poniendole las props se pueden reutilizar el codigo para mandar mas diferentes mensajes con la misma funcion
@@ -47,11 +47,11 @@ function App() {
 
   //Mensaje condicional
   // Aqui es un ejemplo de como poner una condicional abreviada ?=entonces y :=else
-  const titulo = citas.length === 0 ? 'No hay citas' : 'Administra tus citas'
+  const titulo = citas.length === 0 ? 'No hay prestamos' : 'Tus Prestamos'
 
   return (
     <Fragment>
-      <h1>Administrador de pacientes</h1>
+      <h1>Administrador de Prestamo</h1>
       {/* Este es el div contenedor para agregar algunos estilos */}
       <div className="container">
         {/* Este es en el que aplica el calavera */}

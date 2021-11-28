@@ -1,21 +1,23 @@
 import React, { Fragment, useState } from "react";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 
-const Formulario = ({crearCita}) => {
+const Formulario = ({ crearCita }) => {
 
     //Crear state de citas 
     const [cita, actualizarCita] = useState({
-        mascota: '',
-        propietario: '',
+        prestatario: '',
+        prestamista: '',
+        cantidad: '',
+        interes: '',
         fecha: '',
         hora: '',
-        sintomas: ''
+        descripcion: ''
     })
 
+    //Funcion que se ejecuta cada que el usuario escribe en el input
     const [error, actualizarError] = useState(false)
 
-    //Funcion que se ejecuta cada que el usuario escribe en el input
     const actualizarState = (e) => {
         //El e es la variable de evento, el target es como el tomar y el value es el valor del campo llenado
         // console.log(e.target.value);
@@ -26,65 +28,87 @@ const Formulario = ({crearCita}) => {
     }
 
     //Extraer valores (agarra los valores del formulario pa meterlo en otra cosa)
-    const { mascota, propietario, fecha, hora, sintomas } = cita; //Se agarra para darle un valor al formulario y la cita del estado, esto tambien nos sirve para agarrar y resetear el formulario    yo soy el de arriba
+    const { prestatario, prestamista, cantidad, interes, fecha, hora, descripcion } = cita; //Se agarra para darle un valor al formulario y la cita del estado, esto tambien nos sirve para agarrar y resetear el formulario    yo soy el de arriba
 
     const sumitCita = (e) => {
         e.preventDefault(); //Esto siempre se hace para que no haga acciones por defecto que no queires
         // Acciones que siempre se deben de hacer...
 
         // Validar
-        if (mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') { //trim es para quitar los espacio de principio y fin
+        if (prestatario.trim() === '' || prestamista.trim() === '' || cantidad.trim() === '' || interes.trim() === '' || fecha.trim() === '' || hora.trim() === '' || descripcion.trim() === '') { //trim es para quitar los espacio de principio y fin
             actualizarError(true);
             return;
         }
 
         // Elimina lo de los campos son obligatorios cuando se llenan los datos 
         actualizarError(false);
-       
+
         // Asignar un id
-        cita.id=uuidv4();
-        
+        cita.id = uuidv4();
+
         // Crear la cita
         crearCita(cita);
 
         //Reiniciar el form
         actualizarCita({
-            mascota: '',
-            propietario: '',
+            prestatario: '',
+            prestamista: '',
+            cantidad: '',
+            interes: '',
             fecha: '',
             hora: '',
-            sintomas: ''
+            descripcion: ''
         })
     }
 
     return (
         <Fragment>
-            <h2>Crear cita</h2>
-            
+            <h2>Realizar Prestamo</h2>
+
             {/* Esto dice que si en el caso de que error es true que ejecute algo y que si es false ps que no haga nada */}
             {error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
 
             {/* Aqui empiexa el formulario */}
             <form onSubmit={sumitCita}>  {/* onSumit es para la funcion de enviar */}
-                <label>Nombre de la Mascota</label>
+                <label>Nombre de la Prestatario</label>
                 <input
                     type="text"
-                    name="mascota"
+                    name="prestatario"
                     className="u-full-width"
-                    placeholder="Nombre Mascota"
+                    placeholder="Nombre Prestatario"
                     onChange={actualizarState} /*Esta es como la accion que va a llevar a acabo la funcion*/
-                    value={mascota} //Este se complementa con el de arriba
+                    value={prestatario} //Este se complementa con el de arriba
                 />
 
 
-                <label>Nombre del Dueño</label>
+                <label>Nombre del Prestamista</label>
                 <input
                     type="text"
-                    name="propietario"
+                    name="prestamista"
                     className="u-full-width"
-                    placeholder="Nombre Dueño"
+                    placeholder="Nombre Prestamista"
                     onChange={actualizarState}
-                    value={propietario}
+                    value={prestamista}
+                />
+
+                <label>Cantidad Prestada (solo numero)</label>
+                <input
+                    type="number"
+                    name="cantidad"
+                    className="u-full-width"
+                    placeholder="Cantidad"
+                    onChange={actualizarState}
+                    value={cantidad}
+                />
+
+                <label>Tasa de interes (solo numero)</label>
+                <input
+                    type="number"
+                    name="interes"
+                    className="u-full-width"
+                    placeholder="Interes"
+                    onChange={actualizarState}
+                    value={interes}
                 />
 
 
@@ -108,13 +132,13 @@ const Formulario = ({crearCita}) => {
                 />
 
 
-                <label>Sintomas</label>
+                <label>Descripcion</label>
                 <textarea
                     className="u-full-width"
-                    name="sintomas"
-                    placeholder="Descripcion de los sintomas"
+                    name="descripcion"
+                    placeholder="Descripcion"
                     onChange={actualizarState}
-                    value={sintomas}
+                    value={descripcion}
                 />
 
 
